@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- 상품 등록 모달 -->
+  <div class="modal fade" id="ex" tabindex="-1" aria-labelledby="ex" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <main class="form-signin w-100 m-auto">
+            <form>
+              <input type="image">
+              <h1 class="h3 mb-3 fw-normal">상품 정보</h1>
+          
+              <div class="form-floating">
+                <input type="text" class="form-control" id="floatingInput" placeholder="상품명">
+                <label for="floatingInput">상품명</label>
+              </div>
+              <div class="form-floating">
+                <input type="number" min="0" class="form-control" id="floatingPassword" placeholder="1000미소">
+                <label for="floatingPassword">가격</label>
+              </div>
+
+              <div class="input-group">
+                <span class="input-group-text">상품 설명</span>
+                <textarea class="form-control" aria-label="With textarea"></textarea>
+              </div>
+            </form>
+          </main>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+          <button type="button" class="btn btn-primary">등록하기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="container vh-100">
+
+    <!-- 헤더 -->
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-0 border-bottom fixed-top z-1 bg-white">
+      <a href="index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+        <span class="fs-4 fw-bold">THE FACTORY</span>
+      </a>
+  
+      <ul class="nav nav-pills">
+        
+          <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+          <span class="fs-6 me-3 mt-2 pe-3 border-end">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-award" viewBox="0 0 16 16">
+              <path d="M9.669.864 8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68L9.669.864zm1.196 1.193.684 1.365 1.086 1.072L12.387 6l.248 1.506-1.086 1.072-.684 1.365-1.51.229L8 10.874l-1.355-.702-1.51-.229-.684-1.365-1.086-1.072L3.614 6l-.25-1.506 1.087-1.072.684-1.365 1.51-.229L8 1.126l1.356.702 1.509.229z"/>
+              <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"/>
+            </svg>
+            : # 등급
+          </span>
+          <span class="fs-9 me-3 mt-2 ps-0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-coin" viewBox="0 0 16 16">
+              <path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932 0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853 0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9H5.5zm2.177-2.166c-.59-.137-.91-.416-.91-.836 0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91 0 .542-.412.914-1.135.982V8.518l.087.02z"/>
+              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+              <path d="M8 13.5a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11zm0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"/>
+            </svg>
+            : #미소
+          </span>
+        
+        <a href="MyPage.html" class="btn btn-outline-primary me-2">
+          마이페이지
+        </a>
+        <button type="button" class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          로그인
+        </button>
+        
+        <button type="button" class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#Modal2">
+          회원가입
+        </button>
+        
+        <!-- <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">About</a></li> -->
+        <li class="nav-item me-3">
+          <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+            </svg>
+          </button>
+  
+          <div class="offcanvas offcanvas-end w-25 p-3" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasRightLabel">Menu</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="list-group">
+                <li class="list-group-item border border-0">
+                  <button type="button" class="btn btn-outline-light border border-0 text-black " onClick="location.href='shopping.html'">상품 몰</button>
+                </li>
+                <li class="list-group-item border border-0">
+                  <button type="button" class="btn btn-outline-light border border-0 text-black" onClick="location.href='recruitment.html'">채용 공고</button>
+                </li>
+                <li class="list-group-item border border-0">
+                  <button type="button" class="btn btn-outline-light border border-0 text-black" onClick="location.href='Invest.html'">투자 활동</button>
+                </li>
+                <li class="list-group-item border border-0">
+                  <button type="button" class="btn btn-outline-light border border-0 text-black" onClick="location.href='news.html'">뉴스</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+      </ul>
+  
+      
+    </header>
+
+    <div style="height: 6rem;">
+      <!-- 헤더에 컨텐츠 가리기 방지용 div -->
+    </div>
+
+    
+
+    <!-- 상품 아이템 -->
+    <div class="container border border-top-0 position-relative d-flex" style="height: 9rem; width: 40rem;">
+
+      <div class="w-25 position-absolute" style="top: 12%; left: 2%; height: 80%; overflow: hidden; object-fit: cover;">
+        <img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fshopping-phinf.pstatic.net%2Fmain_8228980%2F82289803525.jpg&type=f372_372" class="img-fluid" alt="...">
+      </div>
+
+      <ul class="list-group list-group-flush position-absolute w-50" style="top: 12%; right: 20%;">
+        <li class="list-group-item"><p>상품 설명: 라면은 신라면이지</p></li>
+        <li class="list-group-item">가격: #미소 ,  판매자: #</li>
+      </ul>
+
+      <button type="button" class="btn btn-primary position-absolute" style="bottom: 2%; right: 2%;">구매하기</button>
+
+    </div>
+
+    <div class="container border border-top-0 position-relative d-flex" style="height: 9rem; width: 40rem;">
+
+      <div class="w-25 position-absolute" style="top: 12%; left: 2%; height: 80%; overflow: hidden;">
+        <img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fshopping-phinf.pstatic.net%2Fmain_8228980%2F82289803525.jpg&type=f372_372" class="img-fluid" alt="...">
+      </div>
+
+      <ul class="list-group list-group-flush position-absolute w-50" style="top: 12%; right: 20%;">
+        <li class="list-group-item"><p>상품 설명: 진순이</p></li>
+        <li class="list-group-item">가격: #미소</li>
+      </ul>
+
+      <button type="button" class="btn btn-primary position-absolute" style="bottom: 2%; right: 2%;">구매하기</button>
+
+    </div>
+
+    <div class="container border border-top-0 position-relative" style="height: 9rem; width: 40rem;">
+
+      <div class="w-25 position-absolute" style="top: 12%; left: 2%; height: 80%; overflow: hidden;">
+        <img class="img-fluid" src="https://static.megamart.com/product/image/0135/01353297/01353297_1_960.jpg" alt="">
+      </div>
+
+      <ul class="list-group list-group-flush position-absolute w-50" style="top: 12%; right: 20%;">
+        <li class="list-group-item"><p>상품 설명: 친구들아 모여라</p></li>
+        <li class="list-group-item">가격: #미소</li>
+      </ul>
+
+      <button type="button" class="btn btn-primary position-absolute" style="bottom: 2%; right: 2%;">구매하기</button>
+
+    </div>
+
+    <div class="container border border-top-0 position-relative" style="height: 9rem; width: 40rem;">
+
+      <div class="w-25 position-absolute" style="top: 12%; left: 2%;">
+        <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MjVfMTEy%2FMDAxNjg0OTQ2MTg1MTUz.c5fOikTFVUxTQ0LWSpCVyqNMwY3qYN0OvOWsJwcB0cEg.1pDLm41FIBTYXs16ui6zAYkaOJB6yE3Es2jjDMf1ITwg.JPEG.ssss650%2F%25B4%25D9%25BF%25EE%25B7%25CE%25B5%25E5.jpg&type=a340" class="img-fluid" alt="...">
+      </div>
+
+      <ul class="list-group list-group-flush position-absolute w-50" style="top: 12%; right: 20%;">
+        <li class="list-group-item"><p>상품 설명: </p></li>
+        <li class="list-group-item">가격: #미소</li>
+      </ul>
+
+      <button type="button" class="btn btn-primary position-absolute" style="bottom: 2%; right: 2%;">구매하기</button>
+
+    </div>
+
+    <div class="container border border-top-0 position-relative" style="height: 9rem; width: 40rem;">
+
+      <div class="w-25 position-absolute" style="top: 12%; left: 2%;">
+        <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MjVfMTEy%2FMDAxNjg0OTQ2MTg1MTUz.c5fOikTFVUxTQ0LWSpCVyqNMwY3qYN0OvOWsJwcB0cEg.1pDLm41FIBTYXs16ui6zAYkaOJB6yE3Es2jjDMf1ITwg.JPEG.ssss650%2F%25B4%25D9%25BF%25EE%25B7%25CE%25B5%25E5.jpg&type=a340" class="img-fluid" alt="...">
+      </div>
+
+      <ul class="list-group list-group-flush position-absolute w-50" style="top: 12%; right: 20%;">
+        <li class="list-group-item"><p>상품 설명: </p></li>
+        <li class="list-group-item">가격: #미소</li>
+      </ul>
+
+      <button type="button" class="btn btn-primary position-absolute" style="bottom: 2%; right: 2%;">구매하기</button>
+
+    </div>
+
+    <button type="button" class="btn btn-primary position-fixed" style="width: 10%; right: 5%; bottom: 5%; background-color: #F79C00;" data-bs-toggle="modal" data-bs-target="#ex">
+      상품 등록
+    </button>
+
+
+  </div>
+
+</body>
+</html>

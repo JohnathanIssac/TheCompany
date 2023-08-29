@@ -1,0 +1,9 @@
+.card {
+  transition: all 0.4s;
+}
+
+.card:hover.m-4{
+  transform: scale(1.1);
+  background-color: #00F47A;
+  
+}
